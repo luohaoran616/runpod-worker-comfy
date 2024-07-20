@@ -34,10 +34,10 @@ RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then wget -O models/checkpoints/albedobase
 RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then wget -O models/checkpoints/animaPencilXL_v310.safetensors https://civitai.com/api/download/models/465206; fi
 RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then mkdir models/BiRefNet && wget -O models/BiRefNet/BiRefNet-DIS_ep580.pth https://huggingface.co/ViperYX/BiRefNet/resolve/main/BiRefNet-DIS_ep580.pth?download=true; fi
 RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then wget -O models/BiRefNet/BiRefNet-ep480.pth https://huggingface.co/ViperYX/BiRefNet/resolve/main/BiRefNet-ep480.pth?download=true; fi
-RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO.git custom_nodes; fi
-RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/huchenlei/ComfyUI-layerdiffuse.git custom_nodes; fi
-RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/huchenlei/comfyui-tooling-nodes.git custom_nodes; fi
-RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git custom_nodes; fi
+RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO.git custom_nodes/ComfyUI-BiRefNet-ZHO; fi
+RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/huchenlei/ComfyUI-layerdiffuse.git custom_nodes/ComfyUI-layerdiffuse; fi
+RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/huchenlei/comfyui-tooling-nodes.git custom_nodes/comfyui-tooling-nodes; fi
+RUN if [ -z "$SKIP_DEFAULT_MODELS" ]; then git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git custom_nodes/ComfyUI-Custom-Scripts; fi
 
 # Install ComfyUI dependencies
 RUN pip3 install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 \
